@@ -9,7 +9,7 @@ function DefaultLayout(props: PropsWithChildren) {
             <Header className="flex items-center justify-center text-white">
                 <Link to="/">
                     <div style={{ width: 80 }}>
-                        <img src="/assets/images/99Tech.png" />
+                        <img src="/assets/images/99Tech.png" alt="99-tech-logo" />
                     </div>
                 </Link>
             </Header>

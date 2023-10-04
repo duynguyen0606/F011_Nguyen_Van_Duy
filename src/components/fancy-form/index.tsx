@@ -81,6 +81,23 @@ function FancyFormPage() {
                     image
                 };
             });
+            setErrorMessage({
+                type: CurrencyStatus.TOCURRENCY,
+                content: "Please select your token!"
+            });
+            if (fromCurrency.balance && toCurrency.balance) {
+                setToCurrency((prev) => {
+                    return {
+                        ...prev,
+                        balance: swapFormCurrencyToCurrency({
+                            balance: price,
+                            fromCurrencyPrice: price,
+                            toCurrencyPrice: prev.price
+                        })
+                    };
+                });
+                setErrorMessage(null);
+            }
         } else {
             setToCurrency({
                 balance: swapFormCurrencyToCurrency({
@@ -92,9 +109,9 @@ function FancyFormPage() {
                 price,
                 image
             });
+            setErrorMessage(null);
         }
         setSelectedCurrency(currency);
-        setErrorMessage(null);
         setModalStatus((prev) => {
             return { ...prev, status: false };
         });

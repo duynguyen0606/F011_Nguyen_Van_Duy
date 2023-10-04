@@ -42,12 +42,17 @@ function SumToNPage() {
                             rules={[
                                 ({ getFieldValue }) => ({
                                     validator(_, value) {
-                                        if (!value || !isNaN(value)) {
+                                        if (!value || (!isNaN(value) && parseFloat(value) > 0)) {
                                             return Promise.resolve();
+                                        } else if (isNaN(value)) {
+                                            return Promise.reject(
+                                                new Error("Input must be number!")
+                                            );
+                                        } else {
+                                            return Promise.reject(
+                                                new Error("Input must be number > 0!")
+                                            );
                                         }
-                                        return Promise.reject(
-                                            new Error("Input value must be number!")
-                                        );
                                     }
                                 })
                             ]}>
