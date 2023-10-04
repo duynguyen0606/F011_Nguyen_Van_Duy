@@ -37,6 +37,7 @@ function ModalSelectCurrency(
 
     useEffect(() => {
         if (fakeCallApiCurrency) {
+            //handle fake fetch api
             const data = filterCurrencyByName(fakeCallApiCurrency);
             if (data) {
                 onSelectCurrency({
@@ -89,7 +90,7 @@ function ModalSelectCurrency(
                 </div>
             </div>
             <ul
-                className="h-96	overflow-auto"
+                className="h-96	overflow-auto custom-scroll"
                 style={{ borderTop: "1px solid rgba(34, 34, 34, 0.07)" }}>
                 {tokensConfig
                     .filter(
