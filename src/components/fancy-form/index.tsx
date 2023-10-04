@@ -68,7 +68,6 @@ function FancyFormPage() {
     const [errorMessage, setErrorMessage] = useState<{ type: number; content: string } | null>(
         null
     );
-    const [selectedCurrency, setSelectedCurrency] = useState("");
 
     const onSelectCurrency = (props: OnSelectCurrencyProps) => {
         const { currency, price, image } = props;
@@ -111,7 +110,6 @@ function FancyFormPage() {
             });
             setErrorMessage(null);
         }
-        setSelectedCurrency(currency);
         setModalStatus((prev) => {
             return { ...prev, status: false };
         });
@@ -264,6 +262,25 @@ function FancyFormPage() {
                         <div className="text-xs text-red-500">{errorMessage.content}</div>
                     )}
                 </div>
+                {fromCurrency.balance && toCurrency.balance ? (
+                    <div
+                        className="px-3 py-4 mt-1 rounded-xl"
+                        style={{ border: "1px solid rgba(34, 34, 34, 0.07)" }}>
+                        {`1 ${fromCurrency.type} = ${swapFormCurrencyToCurrency({
+                            balance: fromCurrency.balance,
+                            fromCurrencyPrice: fromCurrency.price,
+                            toCurrencyPrice: toCurrency.price
+                        }).toFixed(2)} ${toCurrency.type}`}
+                        &nbsp;
+                        <span>
+                            {`($${swapToUSD({ balance: 1, price: fromCurrency.price }).toFixed(
+                                2
+                            )})`}
+                        </span>
+                    </div>
+                ) : (
+                    ""
+                )}
                 <Button onClick={() => setOpenDrawerWallet(true)} className="btn-connect-wallet">
                     Connect wallet
                 </Button>
@@ -276,7 +293,8 @@ function FancyFormPage() {
                         return { ...prev, status: false };
                     })
                 }
-                selectedCurrency={selectedCurrency}
+                fromCurrency={fromCurrency.type}
+                toCurrency={toCurrency.type}
             />
             <DrawerWallet open={openDrawerWallet} onClose={() => setOpenDrawerWallet(false)} />
         </div>
