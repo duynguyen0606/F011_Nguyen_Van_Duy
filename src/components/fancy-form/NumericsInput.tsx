@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Input, Tooltip } from 'antd';
+import React, { useState } from "react";
+import { Input, Tooltip } from "antd";
 
 interface NumericInputProps {
     style: React.CSSProperties;
@@ -15,7 +15,7 @@ const NumericInput = (props: NumericInputProps) => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value: inputValue } = e.target;
         const reg = /^-?\d*(\.\d*)?$/;
-        if (reg.test(inputValue) || inputValue === '') {
+        if (reg.test(inputValue) || inputValue === "") {
             onChange(inputValue);
         }
     };
@@ -23,23 +23,23 @@ const NumericInput = (props: NumericInputProps) => {
     // '.' at the end or only '-' in the input box.
     const handleBlur = () => {
         let valueTemp = value;
-        if (value.charAt(value.length - 1) === '.' || value === '-') {
+        if (value.charAt(value.length - 1) === "." || value === "-") {
             valueTemp = value.slice(0, -1);
         }
-        onChange(valueTemp.replace(/0*(\d+)/, '$1'));
+        onChange(valueTemp.replace(/0*(\d+)/, "$1"));
     };
 
     const title = value ? (
         <span className="numeric-input-title">
-            {value !== '-' ? formatNumber(Number(value)) : '-'}
+            {value !== "-" ? formatNumber(Number(value)) : "-"}
         </span>
     ) : (
-        'Input a number'
+        "Input a number"
     );
 
     return (
         <Tooltip
-            trigger={['focus']}
+            trigger={["focus"]}
             title={title}
             placement="topLeft"
             overlayClassName="numeric-input">

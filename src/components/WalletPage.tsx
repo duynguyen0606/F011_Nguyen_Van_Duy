@@ -8,7 +8,7 @@
 //     formatted: string;
 // }
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // const PRIORITY_MAP = {
 //     Osmosis: 100,

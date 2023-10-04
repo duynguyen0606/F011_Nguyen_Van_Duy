@@ -1,11 +1,11 @@
-import { Button } from 'antd';
-import { useState } from 'react';
-import DrawerWallet from './DrawerWallet';
-import ModalSelectCurrency from './ModalSelectCurrencies';
-import NumericInput from './NumericsInput';
-import PopoverSettings from './PopoverSettings';
-import { ArrowIcon, SelectIcon, SettingIcon } from './icons';
-import './style.scss';
+import { Button } from "antd";
+import { useState } from "react";
+import DrawerWallet from "./DrawerWallet";
+import ModalSelectCurrency from "./ModalSelectCurrencies";
+import NumericInput from "./NumericsInput";
+import PopoverSettings from "./PopoverSettings";
+import { ArrowIcon, SelectIcon, SettingIcon } from "./icons";
+import "./style.scss";
 
 enum CurrencyStatus {
     FROMCURRENCY,
@@ -33,14 +33,14 @@ export type OnSelectCurrencyProps = {
 
 const defaultCurrencyState = {
     balance: 0,
-    type: '',
+    type: "",
     price: 0,
-    image: ''
+    image: ""
 };
 
 const formatCurrency = (amount: number) => {
     const fixedAmount = amount.toFixed(2);
-    return Intl.NumberFormat('en-US').format(+fixedAmount);
+    return Intl.NumberFormat("en-US").format(+fixedAmount);
 };
 
 const swapToUSD = ({ balance, price }: { balance: number; price: number }) => {
@@ -68,7 +68,7 @@ function FancyFormPage() {
     const [errorMessage, setErrorMessage] = useState<{ type: number; content: string } | null>(
         null
     );
-    const [selectedCurrency, setSelectedCurrency] = useState('');
+    const [selectedCurrency, setSelectedCurrency] = useState("");
 
     const onSelectCurrency = (props: OnSelectCurrencyProps) => {
         const { currency, price, image } = props;
@@ -112,7 +112,7 @@ function FancyFormPage() {
         if (!fromCurrency.type && !toCurrency.type) {
             setErrorMessage({
                 type: CurrencyStatus.FROMCURRENCY,
-                content: 'Please select your token!'
+                content: "Please select your token!"
             });
             return;
         }
@@ -131,7 +131,7 @@ function FancyFormPage() {
         } else {
             setErrorMessage({
                 type: CurrencyStatus.TOCURRENCY,
-                content: 'Please select your token!'
+                content: "Please select your token!"
             });
         }
     };
@@ -167,7 +167,7 @@ function FancyFormPage() {
                             }}
                         />
                         <Button
-                            className={`btn-select ${!fromCurrency.type && 'select-nothing'}`}
+                            className={`btn-select ${!fromCurrency.type && "select-nothing"}`}
                             onClick={() =>
                                 setModalStatus({ type: CurrencyStatus.FROMCURRENCY, status: true })
                             }>
@@ -181,9 +181,9 @@ function FancyFormPage() {
                                     <span>{fromCurrency.type}</span>
                                 </div>
                             ) : (
-                                'Select token'
+                                "Select token"
                             )}
-                            <SelectIcon color={fromCurrency.type ? '#000' : '#fff'} />
+                            <SelectIcon color={fromCurrency.type ? "#000" : "#fff"} />
                         </Button>
                     </div>
                     <span className="amount">
@@ -194,7 +194,7 @@ function FancyFormPage() {
                                       price: fromCurrency.price
                                   })
                               )}`
-                            : '-'}
+                            : "-"}
                     </span>
                     {errorMessage?.type === CurrencyStatus.FROMCURRENCY && (
                         <div className="text-xs text-red-500">{errorMessage.content}</div>
@@ -214,7 +214,7 @@ function FancyFormPage() {
                             value={toCurrency.balance.toString()}
                         />
                         <Button
-                            className={`btn-select ${!toCurrency.type && 'select-nothing'}`}
+                            className={`btn-select ${!toCurrency.type && "select-nothing"}`}
                             onClick={() =>
                                 setModalStatus({ type: CurrencyStatus.TOCURRENCY, status: true })
                             }>
@@ -228,9 +228,9 @@ function FancyFormPage() {
                                     <span>{toCurrency.type}</span>
                                 </div>
                             ) : (
-                                'Select token'
+                                "Select token"
                             )}
-                            <SelectIcon color={toCurrency.type ? '#000' : '#fff'} />
+                            <SelectIcon color={toCurrency.type ? "#000" : "#fff"} />
                         </Button>
                     </div>
                     <span className="amount">
@@ -241,7 +241,7 @@ function FancyFormPage() {
                                       price: toCurrency.price
                                   })
                               )}`
-                            : '-'}
+                            : "-"}
                     </span>
                     {errorMessage?.type === CurrencyStatus.TOCURRENCY && (
                         <div className="text-xs text-red-500">{errorMessage.content}</div>

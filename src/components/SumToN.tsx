@@ -1,8 +1,8 @@
-import { Button, Form, Input, Space } from 'antd';
-import { FormEvent, useState } from 'react';
+import { Button, Form, Input, Space } from "antd";
+import { useState } from "react";
 
 function SumToNPage() {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState("");
     const [form] = Form.useForm();
 
     const sum_to_n_a = function (n: number) {
@@ -46,14 +46,17 @@ function SumToNPage() {
                                             return Promise.resolve();
                                         }
                                         return Promise.reject(
-                                            new Error('Input value must be number!')
+                                            new Error("Input value must be number!")
                                         );
                                     }
                                 })
                             ]}>
                             <Input placeholder="Input number value ..." />
                         </Form.Item>
-                        <Button htmlType="submit" type="primary">
+                        <Button
+                            htmlType="submit"
+                            type="primary"
+                            style={{ backgroundColor: "#fc72ff" }}>
                             Submit
                         </Button>
                     </Space.Compact>

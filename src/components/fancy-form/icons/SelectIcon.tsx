@@ -1,6 +1,6 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-function SelectIcon({ color = '#fff' }: { color?: string }) {
+function SelectIcon({ color = "#fff" }: { color?: string }) {
     return (
         <svg
             width="12"

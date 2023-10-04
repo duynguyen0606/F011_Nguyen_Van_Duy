@@ -1,10 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import DefaultLayout from './components/Layout';
-import SumToNPage from './components/SumToN';
-import WalletPage from './components/WalletPage';
-import FancyFormPage from './components/fancy-form';
-import HomePage from './components/home-page';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import DefaultLayout from "./components/Layout";
+import SumToNPage from "./components/SumToN";
+import WalletPage from "./components/WalletPage";
+import FancyFormPage from "./components/fancy-form";
+import HomePage from "./components/home-page";
 
 function App() {
     return (

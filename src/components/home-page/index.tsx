@@ -1,19 +1,19 @@
-import { Button } from 'antd';
-import { Link } from 'react-router-dom';
-import './style.scss';
+import { Button } from "antd";
+import { Link } from "react-router-dom";
+import "./style.scss";
 
 const dataArr = [
     {
-        name: 'Three ways sum to n',
-        link: '/three-ways-sum-to-n'
+        name: "Three ways sum to n",
+        link: "/three-ways-sum-to-n"
     },
     {
-        name: 'FancyForm',
-        link: '/fancy-form'
+        name: "FancyForm",
+        link: "/fancy-form"
     },
     {
-        name: 'MessyReact',
-        link: '/messy-react'
+        name: "MessyReact",
+        link: "/messy-react"
     }
 ];
 

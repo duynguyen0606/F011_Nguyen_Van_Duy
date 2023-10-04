@@ -1,5 +1,5 @@
-import { Collapse, CollapseProps, Popover, PopoverProps, Switch } from 'antd';
-import { PropsWithChildren } from 'react';
+import { Collapse, CollapseProps, Popover, PopoverProps, Switch } from "antd";
+import { PropsWithChildren } from "react";
 
 function PopoverSettings(props: PropsWithChildren<PopoverProps>) {
     const { children } = props;

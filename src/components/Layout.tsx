@@ -1,6 +1,6 @@
-import { Layout } from 'antd';
-import { PropsWithChildren } from 'react';
-import { Link } from 'react-router-dom';
+import { Layout } from "antd";
+import { PropsWithChildren } from "react";
+import { Link } from "react-router-dom";
 const { Header, Content } = Layout;
 function DefaultLayout(props: PropsWithChildren) {
     const { children } = props;
