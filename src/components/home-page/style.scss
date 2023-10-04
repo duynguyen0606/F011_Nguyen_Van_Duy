@@ -1,0 +1,13 @@
+#home-page {
+    button {
+        background-color: rgb(252, 114, 255);
+        color: #fff;
+        border: unset;
+
+        &:hover {
+            border: unset;
+            outline: unset;
+            opacity: 0.9;
+        }
+    }
+}

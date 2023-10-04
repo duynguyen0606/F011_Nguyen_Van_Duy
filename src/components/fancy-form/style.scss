@@ -1,0 +1,122 @@
+#fancy-form {
+    .fancy-form-box {
+        position: relative;
+        max-width: 480px;
+        width: 100%;
+        margin: 100px auto;
+        background: rgb(255, 255, 255);
+        border-radius: 24px;
+        border: 1px solid rgba(34, 34, 34, 0.07);
+        padding: 12px 8px 8px;
+        box-shadow: rgba(252, 114, 255, 0.04) 0px 0px 10px 0px,
+            rgba(252, 114, 255, 0.12) 0px 40px 120px 0px;
+        z-index: 1;
+        transition: transform 250ms ease 0s;
+    }
+    .fancy-form-item {
+        background-color: rgb(249, 249, 249);
+        border-radius: 16px;
+        color: rgb(125, 125, 125);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        padding: 16px;
+        display: grid;
+        gap: 8px;
+        .fancy-input {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            input {
+                border: none;
+                outline: none;
+                background-color: transparent;
+                font-size: 24px;
+                padding: unset;
+
+                &:focus {
+                    outline: none;
+                    border: none;
+                    box-shadow: none;
+                }
+            }
+
+            button {
+                transition: all ease-in-out 0.25s;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .btn-select {
+            -webkit-box-align: center;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            opacity: 1;
+            color: rgb(34, 34, 34);
+            cursor: pointer;
+            height: unset;
+            border-radius: 16px;
+            outline: none;
+            user-select: none;
+            border: 1px solid rgba(34, 34, 34, 0.07);
+            font-size: 16px;
+            font-weight: 485;
+            width: initial;
+            padding: 4px 8px;
+            gap: 8px;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            margin-left: 12px;
+            box-shadow: rgba(34, 34, 34, 0.04) 0px 0px 10px 0px;
+            visibility: visible;
+
+            &.select-nothing {
+                background-color: rgb(252, 114, 255);
+                color: #fff;
+            }
+        }
+    }
+
+    .divider-swapper {
+        border-radius: 12px;
+        height: 40px;
+        width: 40px;
+        position: relative;
+        margin: -18px auto;
+        background-color: rgb(249, 249, 249);
+        border: 4px solid rgb(255, 255, 255);
+        z-index: 2;
+
+        .box-icon {
+            display: inline-flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .btn-connect-wallet {
+        margin-top: 4px;
+        padding: 16px;
+        height: unset !important;
+        width: 100%;
+        line-height: 24px;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 16px;
+        outline: none;
+        background-color: rgb(255, 239, 255);
+        color: rgb(252, 114, 255);
+        font-size: 20px;
+        border: unset;
+
+        &:hover {
+            background-color: rgb(255, 239, 255);
+        }
+    }
+}

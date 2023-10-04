@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import DefaultLayout from './components/Layout';
+import SumToNPage from './components/SumToN';
+import WalletPage from './components/WalletPage';
+import FancyFormPage from './components/fancy-form';
+import HomePage from './components/home-page';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <DefaultLayout>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/three-ways-sum-to-n" element={<SumToNPage />} />
+                <Route path="/fancy-form" element={<FancyFormPage />} />
+                <Route path="/messy-react" element={<WalletPage />} />
+            </Routes>
+        </DefaultLayout>
+    );
 }
 
 export default App;
